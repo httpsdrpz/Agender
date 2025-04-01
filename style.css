@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea { /* Adicionada a textarea aqui */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Para incluir padding na largura total */
+}
+
+/* Estilo específico para textarea se necessário,
+   mas ela já herda o estilo acima */
+textarea {
+    /* rows="3" no HTML controla a altura inicial */
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #4cae4c;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+/* Classe para feedback visual (pode ser usada com JS) */
+.success-message {
+    color: green;
+    text-align: center;
+    margin-top: 15px;
+    border: 1px solid green;
+    padding: 10px;
+    background-color: #eaffea;
+    border-radius: 4px;
+}
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+    border: 1px solid red;
+    padding: 10px;
+    background-color: #ffeeee;
+    border-radius: 4px;
+}
