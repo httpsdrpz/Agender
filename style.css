@@ -1,82 +1,141 @@
+/* Importa a fonte Lato do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 body {
-    font-family: sans-serif;
+    /* Usa a fonte importada, com fallback para sans-serif */
+    font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    margin: 20px;
-    background-color: #f4f4f4;
+    margin: 0; /* Remove margem padrão do body */
+    padding: 30px 20px; /* Adiciona padding para espaçamento geral */
+    background-color: #f8f9fa; /* Um cinza muito claro para o fundo */
+    color: #343a40; /* Cor de texto principal um pouco mais suave */
 }
+
 .container {
     max-width: 600px;
-    margin: auto;
+    margin: 30px auto; /* Aumenta um pouco a margem superior/inferior */
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 40px; /* Aumenta o padding interno */
+    border-radius: 10px; /* Bordas um pouco mais arredondadas */
+    /* Sombra mais suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-h1, h2 {
+
+h1 {
     text-align: center;
-    color: #333;
+    color: #212529; /* Cor de título mais escura */
+    margin-bottom: 15px; /* Ajuste na margem */
+    font-weight: 700; /* Peso da fonte mais forte */
 }
+
+h2 {
+    text-align: center;
+    color: #495057; /* Cor de subtítulo mais suave */
+    margin-bottom: 30px; /* Mais espaço abaixo do subtítulo */
+    font-weight: 400; /* Peso normal */
+    font-size: 1.1em; /* Tamanho ligeiramente maior */
+}
+
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+    margin-bottom: 8px; /* Aumenta levemente o espaço abaixo do label */
+    font-weight: 700; /* Label em negrito */
+    color: #495057; /* Cor do label */
+    font-size: 0.95em; /* Tamanho ligeiramente menor para o label */
 }
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
 select,
-textarea { /* Adicionada a textarea aqui */
+textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Para incluir padding na largura total */
+    padding: 12px 15px; /* Ajuste no padding interno dos inputs */
+    margin-bottom: 18px; /* Aumenta espaço abaixo de cada input */
+    border: 1px solid #ced4da; /* Cor de borda padrão */
+    border-radius: 6px; /* Bordas mais suaves */
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; /* Garante a mesma fonte nos inputs */
+    font-size: 1em; /* Tamanho de fonte padrão */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição suave para foco */
 }
 
-/* Estilo específico para textarea se necessário,
-   mas ela já herda o estilo acima */
+/* Estilo para quando o campo está em foco */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #86b7fe; /* Cor da borda estilo Bootstrap */
+    outline: 0; /* Remove o outline padrão */
+    /* Sombra sutil para indicar foco */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilo específico para textarea */
 textarea {
-    /* rows="3" no HTML controla a altura inicial */
     resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 80px; /* Altura mínima */
 }
 
 button {
     display: block;
     width: 100%;
-    padding: 12px;
-    background-color: #5cb85c;
+    padding: 12px 15px; /* Padding consistente com os inputs */
+    background-color: #007bff; /* Azul como cor primária (exemplo, pode voltar ao verde) */
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 6px; /* Consistente com os inputs */
+    font-size: 1.1em; /* Fonte ligeiramente maior */
+    font-weight: 700; /* Texto em negrito */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transição suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil no botão */
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada no hover */
+}
+
+/* Se quiser manter o verde: */
+/*
+button {
+    background-color: #28a745;
+    ... (outros estilos) ...
 }
 button:hover {
-    background-color: #4cae4c;
+    background-color: #218838;
+     ... (outros estilos) ...
 }
+*/
+
 .form-group {
+    /* Mantém a margem, mas o espaço agora vem principalmente dos inputs */
     margin-bottom: 20px;
 }
-/* Classe para feedback visual (pode ser usada com JS) */
-.success-message {
-    color: green;
-    text-align: center;
-    margin-top: 15px;
-    border: 1px solid green;
-    padding: 10px;
-    background-color: #eaffea;
-    border-radius: 4px;
-}
+
+/* Mensagens de feedback (sem alteração, mas mantidas) */
+.success-message,
 .error-message {
-    color: red;
     text-align: center;
-    margin-top: 15px;
-    border: 1px solid red;
-    padding: 10px;
-    background-color: #ffeeee;
-    border-radius: 4px;
+    margin-top: 20px; /* Aumenta espaço acima da mensagem */
+    border: 1px solid; /* Borda definida abaixo */
+    padding: 12px 15px; /* Padding consistente */
+    border-radius: 6px; /* Consistente */
+    font-size: 0.95em;
+}
+
+.success-message {
+    color: #155724; /* Verde escuro para texto */
+    background-color: #d4edda; /* Verde claro para fundo */
+    border-color: #c3e6cb; /* Verde para borda */
+}
+
+.error-message {
+    color: #721c24; /* Vermelho escuro para texto */
+    background-color: #f8d7da; /* Vermelho claro para fundo */
+    border-color: #f5c6cb; /* Vermelho para borda */
 }
